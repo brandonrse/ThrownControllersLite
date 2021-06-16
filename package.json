@@ -1,0 +1,14 @@
+{
+  "name": "throwncontrollers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Brandon R",
+  "license": "ISC",
+  "dependencies": {
+    "@types/createjs": "0.0.29"
+  }
+}

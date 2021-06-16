@@ -1,0 +1,170 @@
+* {
+  margin: auto;
+  padding: 0;
+}
+
+a {
+  color: white;
+  text-decoration: underline;
+}
+
+body, html {
+  height: 100%;
+}
+
+body {
+  font-size: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("../Assets/background.png");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+canvas {
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  background-color: #6e6648;
+  border-style: solid;
+  border-color: #ffffff;
+}
+
+footer {
+  color: #ffffff;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+  padding-left: 10px;
+  position: relative;
+  bottom: 5px;
+  height:-142px;
+}
+
+footer a{
+  color: #6ca6ef;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+p {
+  font-size: medium;
+}
+
+li {
+  margin-left: 20px;
+  font-size: large;
+}
+
+table {
+ font-size: medium; 
+}
+
+th, td {
+  padding-left: 15px;
+}
+
+.btn {
+  position: relative;
+  left: 25%;
+  background-color: #6ca6ef;
+  color: white;
+  font-size: 16px;
+  border: #ffffff;
+  cursor: pointer;
+  box-shadow: 5px 5px #000000;
+  margin: auto;
+  padding: 20px 20px;
+  max-width: 100%;
+  width: auto;
+  height: auto;
+}
+
+.btn:hover {
+  background-color: #507fb8;
+  color: #6ca6ef;
+}
+
+.container {
+  position: relative;
+  width: 50%;
+}
+
+.container img {
+  width: 100%;
+  height: auto;
+}
+
+.container .btn {
+  width: auto;
+  height: auto;
+}
+
+.header-img {
+  display: grid;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.center-fit {
+  max-width: 100%;
+  max-height: 100vh;
+  padding-top: 2em;
+  margin:auto;
+}
+
+.wrapper {
+  border:5px solid #ffffff;
+  border-radius: 20px;
+  margin: auto;
+  color: #ffffff;
+  background-color: #000000;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.wrapper a {
+  color: #ffffff;
+}
+
+.wrapper a:hover {
+  background-color: #6ca6ef;
+}
+
+.wrapper.credits {
+  max-width: 980px;
+  margin:auto;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.wrapper-home {
+  min-height: 100%;
+  padding: 0;
+  margin: 0;
+  position: relative;
+}
+
+.push {
+  height: 142px;
+}
+
+#input {
+  z-index: 101;
+  position: relative;
+  width: 250px;
+  height: 50px;
+  font-size: 20pt;
+  padding-left: 0.1em;
+  color: #000000;
+  background-color: #ffffff;
+  margin:auto;
+  display: grid;
+  transform: translate(0%,-190%);
+  -ms-transform: translate(0%,-190%);
+}

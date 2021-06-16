@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="Content/styles.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous">
+  </script>
+  <script> 
+  $(function(){
+    $("#header").load("header.html"); 
+    $("#footer").load("footer.html"); 
+  });
+  </script> 
+</head>
+<body>
+  <div class="wrapper-home">
+    <div class="header-img" id="header"></div>
+    <div class="wrapper credits">
+      <h1>What is Thrown Controllers?</h1><br>
+      <p>Thrown Controllers is a fun video game trivia game show hosted by <a href=https://www.therunawayguys.com target="_blank">The Runaway Guys.</a></p><br>
+      <p>The goal is to get 10 questions correct without getting a single one wrong. Do that, and you are the winner.</p><br><br><br>
+      
+      <h1>Thrown Controllers Lite</h1><br>
+      <p>This is an unofficial recreation of the game show. Made to practice some coding. There are differences between this version and Proton Jon's:
+      right now, there is only Easy Questions, Tricky Questions, Brutal Questions, Lightning Round, and Multiple Choice implemented. <br><br>
+      The questions are also largely Nintendo-oriented questions due to my lack of knowledge on most non-Nintendo games. As a result, feel free to submit questions. If desired, you will be credited.</p><br><br>
+      <p>I will say a large reason why I made this, in addition to greatly enjoying watching Thrown Controllers, was because of the fact that Proton Jon will never be able to participate in his own game show.</p>
+      <br><br>
+      <p>Contact me at <a href=https://twitter.com/SecretAdept target="_blank">https://twitter.com/SecretAdept</a> to report any bugs, whether it be typos, grammar issues, formatting errors, etc.</p>
+      <br><br><br>
+      <h1>Question Status</h1><br>
+      <table>
+        <tr>
+          <th>Question Type</th>
+          <th># of Questions</th>
+          <th>% of appearing</th>
+        </tr>
+        <tr>
+          <td>Easy Question</td>
+          <td>24</td>
+          <td>30/100</td>
+        </tr>
+        <tr>
+          <td>Tricky Question</td>
+          <td>22</td>
+          <td>20/100</td>
+        </tr>
+        <tr>
+          <td>Brutal Question</td>
+          <td>19</td>
+          <td>10/100</td>
+        </tr>
+        <tr>
+          <td>Lightning Round</td>
+          <td>20</td>
+          <td>20/100</td>
+        </tr>
+        <tr>
+          <td>Multiple Choice</td>
+          <td>16</td>
+          <td>20/100</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="push"></div>
+  <div id="footer"></div>
+</body>
+</html>

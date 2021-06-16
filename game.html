@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thrown Controllers Lite</title>
+  <link rel="stylesheet" href="Content/styles.css">
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.js"
+    integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous">
+  </script>
+  <script> 
+  $(function(){
+    $("#header").load("header.html"); 
+    $("#footer").load("footer.html"); 
+  });
+  </script> 
+</head>
+<body>
+  <div class="header-img" id="header"></div>
+  <canvas id="canvas" width="980" height="760"></canvas>
+  <div id="text"></div>
+  <!--Dependencies-->
+  <script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+
+    <!--GAME SCRIPTS-->
+  <!--Configuration Files-->
+  <script src="./Scripts/config/scene.js"></script>
+
+  <!--Object Scripts-->
+  <script src="./Scripts/objects/game.js"></script>
+  <script src="./Scripts/objects/label.js"></script>
+  <script src="./Scripts/objects/logo.js"></script>
+  <script src="./Scripts/objects/question.js"></script>
+  <script src="./Scripts/objects/controller.js"></script>
+  <script src="./Scripts/objects/scene.js"></script>
+
+  <!--Game Objects-->
+  <script src="./Scripts/objects/submit.js"></script>
+  <script src="./Scripts/objects/box.js"></script>
+  <script src="./Scripts/objects/easy.js"></script>
+  <script src="./Scripts/objects/lightning.js"></script>
+  <script src="./Scripts/objects/multiple.js"></script>
+
+  <!--Scene Scripts-->
+  <script src="./Scripts/scenes/start.js"></script>
+  <script src="./Scripts/scenes/play.js"></script>
+  <script src="./Scripts/scenes/win.js"></script>
+
+  <script src="./Scripts/core/game.js"></script>
+  <div class="push"></div>
+  <div id="footer"></div>
+</body>
+</html>
