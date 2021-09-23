@@ -24,8 +24,8 @@ module scenes {
 
     public Start():void {
       // Choose a random question
-      this.selection = Math.floor(Math.random() * 100);
-      // 0-30 = Easy Question
+      this.selection = Math.floor(Math.random() * 100) + 1;
+      // 1-30 = Easy Question
       if (this.selection <= 30) {
         this.type = 0;
         this.easy = new objects.EasyQuestion(this.assetManager, this.type);
@@ -50,7 +50,7 @@ module scenes {
         this.lightning = new objects.Lightning(this.assetManager);
       }
       // 81-100 = Multiple Choice
-      else if (this.selection <= 101) {
+      else {
         this.type = 4;
         this.multiple = new objects.MultipleChoice(this.assetManager);
       }

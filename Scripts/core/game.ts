@@ -26,11 +26,13 @@
         {id:"score", src:"./Assets/score.png"},
         {id:"gamebg", src:"./Assets/gamebg.png"},
         {id:"gamebrutalbg", src:"./Assets/gamebrutalbg.png"},
-        {id:"triangle", src:"./Assets/triangle.png"},
+        {id:"triangle", src:"./Assets/triangle1.png"},
         {id:"check", src:"./Assets/check.png"},
         {id:"x", src:"./Assets/x.png"},
         {id:"circlegrn", src:"./Assets/circlegrn.png"},
         {id:"circlered", src:"./Assets/circlered.png"},
+        {id:"circlegrn1", src:"./Assets/circlegrn1.png"},
+        {id:"circlered2", src:"./Assets/circlered2.png"},
         {id:"winner", src:"./Assets/winner.png"},
         {id:"winbg", src:"./Assets/winbg.png"},
 
@@ -39,6 +41,11 @@
         {id:"tricky", src:"./Assets/tricky.png"},
         {id:"lightning", src:"./Assets/lightning.png"},
         {id:"multiple", src:"./Assets/multiple.png"},
+
+        {id:"easybg", src:"./Assets/easybg.png"},
+        {id:"brutalbg", src:"./Assets/brutalbg.png"},
+        {id:"lrbg", src:"./Assets/lrbg.jpg"},
+        {id:"multiplebg", src:"./Assets/multiplebg.png"},
 
 
         {id:"earthbound", src:"./Assets/audio/easy.mp3"},

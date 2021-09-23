@@ -42,9 +42,10 @@ module objects {
       objects.Game.multipleQuestions.push(num);
 
       // Logo & Question
-      this.logo = new objects.Logo(this.assetManager,"multiple",this.canvas.clientWidth * 0.5 - 373, 50);
-      this.questionLabel = new objects.Label(this.chosenQuestion.question, "28pt", "Candara", "#FFF", 30, 500);
-      this.answerLabel = new objects.Label(this.chosenQuestion.answerDesc, "28pt", "Candara", "#FFF", 30, 500);
+      // this.logo = new objects.Logo(this.assetManager,"multiplebg",this.canvas.clientWidth * 0.5 - 373, 50);
+      this.logo = new objects.Logo(this.assetManager,"multiplebg",0, 0);
+      this.questionLabel = new objects.Label(this.chosenQuestion.question, "20pt", "Verdana", "#000", 30, 500);
+      this.answerLabel = new objects.Label(this.chosenQuestion.answerDesc, "20pt", "Verdana", "#000", 30, 500);
 
       this.questionLabel.lineWidth = 930;
       this.answerLabel.lineWidth = 930;
@@ -71,19 +72,33 @@ module objects {
 
     // Create the boxes underneath the text
     public createBoxes():void{
-      this.box1 = new objects.Box(0, 130, 587, "#ff9b9b", this.chosenQuestion.answers[0]);
+      var randomNumArr = [];
+      while (randomNumArr.length < 4) {
+        let r = Math.floor(Math.random() * 4);
+        if (randomNumArr.indexOf(r) === -1) {
+          randomNumArr.push(r);
+        } 
+      }
+
+      // Change the answer to the new answer
+      this.chosenQuestion.multipleAnswer = randomNumArr.indexOf(this.chosenQuestion.multipleAnswer);
+
+      this.box1 = new objects.Box(0, 130, 567, "#ff9b9b", this.chosenQuestion.answers[randomNumArr[0]]);
       this.box1.on("click", () => {
         this.checkAnswer(this.box1.num, this.chosenQuestion.multipleAnswer);
       });
-      this.box2 = new objects.Box(1, 320, 587, "#9dd4ff", this.chosenQuestion.answers[1]);
+
+      this.box2 = new objects.Box(1, 320, 567, "#9dd4ff", this.chosenQuestion.answers[randomNumArr[1]]);
       this.box2.on("click", () => {
         this.checkAnswer(this.box2.num, this.chosenQuestion.multipleAnswer);
       });
-      this.box3 = new objects.Box(2, 510, 587, "#9dffa9", this.chosenQuestion.answers[2]);
+
+      this.box3 = new objects.Box(2, 510, 567, "#9dffa9", this.chosenQuestion.answers[randomNumArr[2]]);
       this.box3.on("click", () => {
         this.checkAnswer(this.box3.num, this.chosenQuestion.multipleAnswer);
       });
-      this.box4 = new objects.Box(3, 700, 587, "#ffff80", this.chosenQuestion.answers[3]);
+
+      this.box4 = new objects.Box(3, 700, 567, "#ffff80", this.chosenQuestion.answers[randomNumArr[3]]);
       this.box4.on("click", () => {
         this.checkAnswer(this.box4.num, this.chosenQuestion.multipleAnswer);
       });
@@ -119,8 +134,8 @@ module objects {
       ["A Link Between Worlds", "The Wind Waker", "Four Swords", "Link's Awakening"],"Zelda is only briefly mentioned in The Legend of Zelda: Link's Awakening at the very beginning of the game by Marin.",[],3));
       this.questions.push(new objects.Question("Not including the avatar and Tatsu, how many playable party members are there in Xenoblade Chronicles X?",
       ["17", "18", "19", "20"],"There are a total of 18 playable party members in Xenoblade Chronicles X, not including the avatar and Tatsu.",[],1));
-      this.questions.push(new objects.Question("How many Super Mario fighters are in  Super Smash Bros. Ultimate (as of 08/2020)?",
-      ["6", "7", "8", "9"],"There are 9 Super Mario characters in Super Smash Bros. Ultimate.",[],3));
+      this.questions.push(new objects.Question("How many Super Mario fighters are in Super Smash Bros. Ultimate (as of 08/2020)? *The individual Koopalings do not count as separate fighters.",
+      ["6", "7", "8", "9"],"There are 9 Super Mario fighters in Super Smash Bros. Ultimate: Mario, Luigi, Peach, Daisy, Bowser, Dr. Mario, Rosalina & Luma, Bowser. Jr, and Piranha Plant.",[],3));
       this.questions.push(new objects.Question("Not counting Byleth, how many A supports does Sylvain\nfrom Fire Emblem: Three Houses have?",
       ["3", "4", "5", "16"],"Despite his reputation, Sylvain only has 4 A supports, the third-lowest in the game.",[],1));
       this.questions.push(new objects.Question("Which character is the Goddess of Courage in The Legend of Zelda series?",
@@ -137,6 +152,8 @@ module objects {
       ["Fire Emblem: Mystery of the Emblem", "Fire Emblem Gaiden", "Fire Emblem Fates", "Fire Emblem: Thracia 776"],"Fire Emblem Echoes: Shadows of Valentia is a remake of the second Fire Emblem title, Fire Emblem Gaiden.",[],1));
       this.questions.push(new objects.Question("What's the name of the non-human companions that fight alongside Hunters in the Monster Hunter series?",
       ["Palico", "Poogie", "Melynx", "Moofah"],"Palico are the non-human companions that fight alongside hunters.",[],0));
+      this.questions.push(new objects.Question("How many Fire Emblem fighters are in Super Smash Bros. Ultimate (as of 09/2021)?",
+      ["7", "8", "9", "10"],"There are 8 Fire Emblem fighters in Super Smash Bros. Ultimate: Marth, Roy, Ike, Robin, Lucina, Corrin, Chrom, and Byleth.",[],1));
     }
   }
 }

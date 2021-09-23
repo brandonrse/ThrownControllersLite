@@ -34,9 +34,10 @@ var objects;
             this.chosenQuestion = this.questions[num];
             objects.Game.multipleQuestions.push(num);
             // Logo & Question
-            this.logo = new objects.Logo(this.assetManager, "multiple", this.canvas.clientWidth * 0.5 - 373, 50);
-            this.questionLabel = new objects.Label(this.chosenQuestion.question, "28pt", "Candara", "#FFF", 30, 500);
-            this.answerLabel = new objects.Label(this.chosenQuestion.answerDesc, "28pt", "Candara", "#FFF", 30, 500);
+            // this.logo = new objects.Logo(this.assetManager,"multiplebg",this.canvas.clientWidth * 0.5 - 373, 50);
+            this.logo = new objects.Logo(this.assetManager, "multiplebg", 0, 0);
+            this.questionLabel = new objects.Label(this.chosenQuestion.question, "20pt", "Verdana", "#000", 30, 500);
+            this.answerLabel = new objects.Label(this.chosenQuestion.answerDesc, "20pt", "Verdana", "#000", 30, 500);
             this.questionLabel.lineWidth = 930;
             this.answerLabel.lineWidth = 930;
             this.bgm = createjs.Sound.play("earthbound");
@@ -59,19 +60,28 @@ var objects;
         // Create the boxes underneath the text
         MultipleChoice.prototype.createBoxes = function () {
             var _this = this;
-            this.box1 = new objects.Box(0, 130, 587, "#ff9b9b", this.chosenQuestion.answers[0]);
+            var randomNumArr = [];
+            while (randomNumArr.length < 4) {
+                var r = Math.floor(Math.random() * 4);
+                if (randomNumArr.indexOf(r) === -1) {
+                    randomNumArr.push(r);
+                }
+            }
+            // Change the answer to the new answer
+            this.chosenQuestion.multipleAnswer = randomNumArr.indexOf(this.chosenQuestion.multipleAnswer);
+            this.box1 = new objects.Box(0, 130, 567, "#ff9b9b", this.chosenQuestion.answers[randomNumArr[0]]);
             this.box1.on("click", function () {
                 _this.checkAnswer(_this.box1.num, _this.chosenQuestion.multipleAnswer);
             });
-            this.box2 = new objects.Box(1, 320, 587, "#9dd4ff", this.chosenQuestion.answers[1]);
+            this.box2 = new objects.Box(1, 320, 567, "#9dd4ff", this.chosenQuestion.answers[randomNumArr[1]]);
             this.box2.on("click", function () {
                 _this.checkAnswer(_this.box2.num, _this.chosenQuestion.multipleAnswer);
             });
-            this.box3 = new objects.Box(2, 510, 587, "#9dffa9", this.chosenQuestion.answers[2]);
+            this.box3 = new objects.Box(2, 510, 567, "#9dffa9", this.chosenQuestion.answers[randomNumArr[2]]);
             this.box3.on("click", function () {
                 _this.checkAnswer(_this.box3.num, _this.chosenQuestion.multipleAnswer);
             });
-            this.box4 = new objects.Box(3, 700, 587, "#ffff80", this.chosenQuestion.answers[3]);
+            this.box4 = new objects.Box(3, 700, 567, "#ffff80", this.chosenQuestion.answers[randomNumArr[3]]);
             this.box4.on("click", function () {
                 _this.checkAnswer(_this.box4.num, _this.chosenQuestion.multipleAnswer);
             });
@@ -97,7 +107,7 @@ var objects;
             this.questions.push(new objects.Question("Which of these Pokémon can Gigantamax?", ["Kingler", "Gyarados", "Gigalith", "Runerigus"], "Kingler is able to Gigantamax, being able to use G-Max Foam Burst.", [], 0));
             this.questions.push(new objects.Question("Which Legend of Zelda game does not feature Zelda as an interactable character?", ["A Link Between Worlds", "The Wind Waker", "Four Swords", "Link's Awakening"], "Zelda is only briefly mentioned in The Legend of Zelda: Link's Awakening at the very beginning of the game by Marin.", [], 3));
             this.questions.push(new objects.Question("Not including the avatar and Tatsu, how many playable party members are there in Xenoblade Chronicles X?", ["17", "18", "19", "20"], "There are a total of 18 playable party members in Xenoblade Chronicles X, not including the avatar and Tatsu.", [], 1));
-            this.questions.push(new objects.Question("How many Super Mario fighters are in  Super Smash Bros. Ultimate (as of 08/2020)?", ["6", "7", "8", "9"], "There are 9 Super Mario characters in Super Smash Bros. Ultimate.", [], 3));
+            this.questions.push(new objects.Question("How many Super Mario fighters are in Super Smash Bros. Ultimate (as of 08/2020)? *The individual Koopalings do not count as separate fighters.", ["6", "7", "8", "9"], "There are 9 Super Mario fighters in Super Smash Bros. Ultimate: Mario, Luigi, Peach, Daisy, Bowser, Dr. Mario, Rosalina & Luma, Bowser. Jr, and Piranha Plant.", [], 3));
             this.questions.push(new objects.Question("Not counting Byleth, how many A supports does Sylvain\nfrom Fire Emblem: Three Houses have?", ["3", "4", "5", "16"], "Despite his reputation, Sylvain only has 4 A supports, the third-lowest in the game.", [], 1));
             this.questions.push(new objects.Question("Which character is the Goddess of Courage in The Legend of Zelda series?", ["Din", "Nayru", "Farore", "Hylia"], "Farore is known as the Goddess of Courage.", [], 2));
             this.questions.push(new objects.Question("How many levels were in World 9 of Donkey Kong Country Returns for the Wii?", ["1", "4", "7", "10"], "The Wii version of Donkey Kong Country Returns only had 1 level in World 9. The 3DS version added an extra 8.", [], 0));
@@ -106,6 +116,7 @@ var objects;
             this.questions.push(new objects.Question("Which of these masks from The Legend of Zelda: Majora's Mask is a transformation mask?", ["Deku Mask", "Stone Mask", "Bunny Hood", "Bremen Mask"], "The tranformation masks are: Deku Mask, Goron Mask, Zora Mask, Fierce Deity Mask, and technically the Giant's Mask.", [], 0));
             this.questions.push(new objects.Question("Fire Emblem Echoes: Shadows of Valentia is a remake of which Fire Emblem title?", ["Fire Emblem: Mystery of the Emblem", "Fire Emblem Gaiden", "Fire Emblem Fates", "Fire Emblem: Thracia 776"], "Fire Emblem Echoes: Shadows of Valentia is a remake of the second Fire Emblem title, Fire Emblem Gaiden.", [], 1));
             this.questions.push(new objects.Question("What's the name of the non-human companions that fight alongside Hunters in the Monster Hunter series?", ["Palico", "Poogie", "Melynx", "Moofah"], "Palico are the non-human companions that fight alongside hunters.", [], 0));
+            this.questions.push(new objects.Question("How many Fire Emblem fighters are in Super Smash Bros. Ultimate (as of 09/2021)?", ["7", "8", "9", "10"], "There are 8 Fire Emblem fighters in Super Smash Bros. Ultimate: Marth, Roy, Ike, Robin, Lucina, Corrin, Chrom, and Byleth.", [], 1));
         };
         return MultipleChoice;
     }(createjs.Container));

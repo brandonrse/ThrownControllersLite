@@ -167,4 +167,5 @@ th, td {
   display: grid;
   transform: translate(0%,-190%);
   -ms-transform: translate(0%,-190%);
+  border-radius: 5px;
 }

@@ -29,7 +29,7 @@ module objects {
     public Start():void {
       if (this.type == 0) {
         this.loadEasyQuestions();
-        this.logoType = "easy";
+        this.logoType = "easybg";
         this.musicType = "earthbound";
 
         let num = Math.floor(Math.random() * this.questions.length);
@@ -41,7 +41,7 @@ module objects {
       }
       if (this.type == 1) {
         this.loadBrutalQuestions();
-        this.logoType = "brutal";
+        this.logoType = "brutalbg";
         this.musicType = "smithy";
 
         let num = Math.floor(Math.random() * this.questions.length);
@@ -65,13 +65,22 @@ module objects {
       }
 
       // Logo & Question
-      this.logo = new objects.Logo(this.assetManager,this.logoType,this.canvas.clientWidth * 0.5 - 373, 50);
-      this.questionLabel = new objects.Label(this.chosenQuestion.question, "28pt", "Candara", "#FFF", 30, 500);
-      this.answerLabel = new objects.Label(this.chosenQuestion.answerDesc, "28pt", "Candara", "#FFF", 30, 500);
+      if (this.logoType == "tricky") 
+      {
+        this.logo = new objects.Logo(this.assetManager,this.logoType,this.canvas.clientWidth * 0.5 - 373, 50);
+        this.questionLabel = new objects.Label(this.chosenQuestion.question, "20pt", "Verdana", "#FFF", 30, 500);
+        this.answerLabel = new objects.Label(this.chosenQuestion.answerDesc, "20pt", "Verdana", "#FFF", 30, 500);
+      }
+      else 
+      {
+        this.logo = new objects.Logo(this.assetManager,this.logoType,0, 0);
+        this.questionLabel = new objects.Label(this.chosenQuestion.question, "20pt", "Verdana", "#000", 30, 515);
+        this.answerLabel = new objects.Label(this.chosenQuestion.answerDesc, "20pt", "Verdana", "#000", 30, 515);
+      }
       this.questionLabel.lineWidth = 930;
       this.answerLabel.lineWidth = 930;
       // Submit button
-      this.submit = new objects.SubmitButton(this.assetManager, "triangle", 660, 660);
+      this.submit = new objects.SubmitButton(this.assetManager, "triangle", 660, 655);
       this.submit.on("click", () => {
         this.checkAnswer(this.chosenQuestion);
       });
@@ -124,9 +133,9 @@ module objects {
       this.questions.push(new objects.Question("What weapon type does Marth exclusively use in Fire Emblem: Shadow Dragon?",
       ["SWORD", "SWORDS", "RAPIER", "RAPIERS"],"Marth can only use swords in Fire Emblem: Shadow Dragon, which isn't the best weapon type."));
       this.questions.push(new objects.Question("What was Princess Peach's original localized name?",
-      ["TOADSTOOL", "PRINCESS TOADSTOOL", "TOAD STOOL", "PRINCESS TOAD STOOL"],"Princess Peach's original name in the west was \"Princess Toadstool\". In Japan, she was always known as \"Princess Peach\""));
+      ["TOADSTOOL", "PRINCESS TOADSTOOL", "TOAD STOOL", "PRINCESS TOAD STOOL"],"Princess Peach's original name in the west was \"Princess Toadstool\". In Japan, she was always known as \"Princess Peach.\""));
       this.questions.push(new objects.Question("Who was Sonic's companion in Sonic the Hedgehog 2?",
-      ["TAILS", "MILES", "MILES PROWER", "MILES TAILS PROWER", "MILES \"TAILS\" PROWER", "TAIL"],"Accompanying Sonic the Hedgehog 2 was Miles \"Tails\" Prower."));
+      ["TAILS", "MILES", "MILES PROWER", "MILES TAILS PROWER", "MILES \"TAILS\" PROWER", "TAIL"],"Accompanying Sonic in Sonic the Hedgehog 2 was Miles \"Tails\" Prower."));
       this.questions.push(new objects.Question("Name one of the four unlockable characters in Super Smash Bros. for the Nintendo 64.",
       ["NESS", "LUIGI", "JIGGLYPUFF", "JIGGLY PUFF", "CAPTAIN FALCON", "FALCON", "DOUGLAS"],"The four unlockable characters in Super Smash Bros. for the Nintendo 64 were: Luigi, Ness, Captain Falcon, and Jigglypuff."));
       this.questions.push(new objects.Question("What is the name of Link's horse in The Legend of Zelda: Ocarina of Time?",
@@ -157,8 +166,8 @@ module objects {
       ["3", "MONSTER HUNTER 3", "TRI", "MONSTER HUNTER TRI", "MONSTER HUNTER: TRI", "MONSTER HUNTER 3 ULTIMATE", "MONSTER HUNTER 3: ULTIMATE"], "Swimming and underwater combat were introduced to the Monster Hunter series in Monster Hunter 3."));
       this.questions.push(new objects.Question("The Gore Magala was the flagship monster of which Monster Hunter title?",
       ["4", "MONSTER HUNTER 4"], "The Gore Magala was the flagship monster of Monster Hunter 4."));
-      this.questions.push(new objects.Question("What are the two items you need to combine to make a potion in Monster Hunter? (Separate the words like: \"word1 and word2\")",
-      ["BLUE MUSHROOM AND HERB", "A BLUE MUSHROOM AND A HERB", "A BLUE MUSHROOM AND AN HERB", "A BLUE MUSHROOM AND HERB", "BLUE MUSHROOM AND A HERB", "BLUE MUSHROOM AND AN HERB"], "One of the first things you learn how to make in Monster Hunter is a potion using a Blue Mushroom and an Herb."));
+      this.questions.push(new objects.Question("What are the two items you need to combine to make a potion in Monster Hunter (Pre-Rise)? (Separate the words like: \"word1 and word2\")",
+      ["BLUE MUSHROOM AND HERB", "A BLUE MUSHROOM AND A HERB", "A BLUE MUSHROOM AND AN HERB", "A BLUE MUSHROOM AND HERB", "BLUE MUSHROOM AND A HERB", "BLUE MUSHROOM AND AN HERB", "HERB AND BLUE MUSHROOM", "HERB AND A BLUE MUSHROOM", "HERB AND BLUE MUSHROOMS"], "One of the first things you learn how to make in Monster Hunter is a potion using a Blue Mushroom and an Herb."));
       this.questions.push(new objects.Question("The first and most basic drink you're taught how to make in VA-11 Hall-A is:",
       ["SUGAR RUSH", "SUGARRUSH"], "The first drink you make is Sugar Rush."));
     }
@@ -170,12 +179,12 @@ module objects {
       ["17", "SEVENTEEN"],"Godot has a rule where he drinks 17 cups of coffee during a trial and no more."));
       this.questions.push(new objects.Question("In Xenoblade Chronicles, there is an item called the Love Source which is the best item for raising affinity between two party members. There is only one item that can be traded for it. What is the item?",
       ["VERITAS GLYPHS", "VERITAS GLYPH"],"The rare Veritas Glyphs is the only item that can be traded for the Love Source. The item is rare as only the game's superbosses can drop it."));
-      this.questions.push(new objects.Question("How many amiibo does the Legend of Zelda protagonist \"Link\" have?",
-      ["12", "TWELVE"],"There are 12 total Link amiibos: \nSmash Bros. Link, Smash Bros. Toon Link, Wolf Link, Wind Waker Toon Link, Ocarina of Time Link, 8-Bit Link, Rider Link, Archer Link, Twilight Princess Link, Skyward Sword Link, Majora's Mask Young Link, Smash Bros. Young Link."));
+      this.questions.push(new objects.Question("How many amiibo does the Legend of Zelda protagonist \"Link\" have (as of 08/2021)?",
+      ["13", "THIRTEEN"],"There are 13 total Link amiibos: \nSmash Bros. Link, Smash Bros. Toon Link, Wolf Link, Wind Waker Toon Link, Ocarina of Time Link, 8-Bit Link, Rider Link, Archer Link, Twilight Princess Link, Skyward Sword Link, Majora's Mask Young Link, Smash Bros. Young Link, Link's Awakening Link."));
       this.questions.push(new objects.Question("Which Pokémon is known as the Legendary Pokémon?",
       ["ARCANINE"],"Oddly enough, Arcanine's category is the Legendary Pokémon."));
       this.questions.push(new objects.Question("Which Pokémon game was the first to remove the slot machine minigame?",
-      ["POKEMON DIAMOND", "POKEMON PEARL", "POKEMON DIAMOND AND PEARL", "POKÉMON DIAMOND", "POKÉMON PEARL", "POKÉMON DIAMOND AND PEARL", "DIAMOND", "PEARL"], "The South Korean versions of Pokémon Diamond and Pearl were the first to remove the slot machine minigame. This change will be carried over to the European version of Pokémon Platinum."));
+      ["POKEMON DIAMOND", "POKEMON PEARL", "POKEMON DIAMOND AND PEARL", "POKÉMON DIAMOND", "POKÉMON PEARL", "POKÉMON DIAMOND AND PEARL", "DIAMOND", "PEARL","DIAMOND AND PEARL"], "The South Korean versions of Pokémon Diamond and Pearl were the first to remove the slot machine minigame. This change will be carried over to the European version of Pokémon Platinum."));
       this.questions.push(new objects.Question("In Tales of Symphonia, Lloyd obtains two swords that together are called the Material Blade. Name one of the swords.",
       ["VORPAL", "VORPAL SWORD", "VORPAL BLADE", "FLAMBERGE"],"The Vorpal Sword and the Flamberge are the two swords that make up Lloyd's Material Blade. They are also reoccuring weapons throughout the series."));
       this.questions.push(new objects.Question("In The Legend of Zelda: Breath of the Wild, a character named Purah who assists Link by enhancing his Sheikah Slate. How old is she? (Leeway of 2)",
@@ -183,10 +192,10 @@ module objects {
       this.questions.push(new objects.Question("In Pokémon Black, White, Black 2, and White 2 various NPC musicians can affect the background music. What instrument can be added to the music in Anville Town?",
       ["FLUTE", "FLUTES", "FLAUTIST"],"Talking to the flautist will add a flute track to the background music."));
       this.questions.push(new objects.Question("In Detroit: Become Human your choices make a difference. What is the name of the fish you can save?",
-      ["DEWEY"], "\"Alexa, ask CyberLife to tell me about the fish.\"...Did you save Dewey? Software Instability increased."));
-      this.questions.push(new objects.Question("Super Smash Bros. Brawl was an incredible entry in the Nintendo Crossover series. How many stickers were in the game? (Leeway of 50)",
-      ["R,650,750"],"There were 700 stickers to collect across the various modes."));
-      this.questions.push(new objects.Question("In The World Ends With You, each piece of clothing has an in-game brand. What brand is Neku's headphones?",
+      ["DEWEY, DEWY"], "\"Alexa, ask CyberLife to tell me about the fish.\"...Did you save Dewey? Software Instability increased."));
+      this.questions.push(new objects.Question("Super Smash Bros. Brawl was an incredible entry in the Nintendo Crossover series. How many stickers were in the game? (Leeway of 20)",
+      ["R,680,720"],"There were 700 stickers to collect across the various modes."));
+      this.questions.push(new objects.Question("In The World Ends With You, each piece of clothing has an in-universe brand. What brand is Neku's headphones?",
       ["GATITO"],"Neku's headphones are of Gatito brand and called \"My Phones\"."));
       this.questions.push(new objects.Question("The Koopalings are 7 of Bowser's minions, appearing a lot more in recent games. Iggy, Roy, Larry, Morton, Wendy, and Ludwig. Name the missing Koopaling.",
       ["LEMMY", "LEMY", "LEMMY KOOPA"],"Lemmy Koopa is the youngest of the koopalings and usually uses bouncy balls during his battles."));
@@ -199,7 +208,7 @@ module objects {
       this.questions.push(new objects.Question("The Konami Code is famous within gaming. What was the first NES game to use the code?",
       ["GRADIUS"], "Gradius was the very first NES game to use the Konami Code."));
       this.questions.push(new objects.Question("In Super Mario Sunshine, Mario must find all of the missing Shine Sprites. There are quite a bit in Delfino Plaza. Not counting the airstrip or Bowser shines, and counting the Blue Coins, how many Shine Sprites are in Delfino Plaza?",
-      ["39"], "There are a total of 39 Shine Sprites in Delfino Plaza. That is almost a quarter of the missing Shine Sprites."));
+      ["39"], "There are a total of 39 Shine Sprites in Delfino Plaza. That is almost a third of the missing Shine Sprites."));
       this.questions.push(new objects.Question("In Super Mario Bros. 3, the Kuribo's Shoe was eventually correctly localized to Goomba's Shoe. The overworld Cloud item, however, was never localized correctly. What is the Cloud's non-localized name?",
       ["JUGEM'S CLOUD", "JUGEM CLOUD", "JUGEMS CLOUD"], "The Cloud, or rather Lakitu's Cloud, was never localized and is called Jugem's Cloud, Jugem being the romanization of Lakitu's Japanese name: Jugemu."));
     }
@@ -215,7 +224,7 @@ module objects {
       ["MARIO PARTY 5", "5", "FIVE", "MARIO PARTY: THE TOP 100", "MARIO PARTY TOP 100"], "Mario Party 5 featured the Star Spirits who were guarding the Dream Depot."));
       this.questions.push(new objects.Question("Name the song required to enter the Wind Temple in The Legend of Zelda: The Wind Waker.",
       ["WIND GOD'S ARIA", "WIND GODS ARIA"], "The Wind God's Aria, learned from the previous Sage of Wind, is required to enter and progress through the Wind Temple."));
-      this.questions.push(new objects.Question("In The Legend of Zelda: Phantom Hourglass, Zauz is a descendant of a race that vanished. What was this race called? ",
+      this.questions.push(new objects.Question("In The Legend of Zelda: Phantom Hourglass, Zauz is a descendant of a race that vanished. What was this race called?",
       ["COBBLE", "COBBLE KINGDOM"], "The Cobble were a race that only appeared in Phantom Hourglass. They served under the Ocean King."));
       this.questions.push(new objects.Question("In Danganronpa V3, the Ultimate Artist Angie Yonaga worships a God. What is the God's name?",
       ["ATUA"], "Atua, the God of the Island, is Angie's God who speaks through her."));

@@ -38,15 +38,16 @@ module objects {
 
       //#region MAIN
       // Logo & Question
-      this.logo = new objects.Logo(this.assetManager,"lightning",this.canvas.clientWidth * 0.5 - 373, 50);
-      this.questionLabel = new objects.Label(this.chosenQuestion.question, "bold 28pt", "Candara", "#FFF", this.canvas.clientWidth * 0.5, 520,true);
-      this.answerLabel = new objects.Label(this.chosenQuestion.answers[0], "24pt", "Candara", "#FFF", 490, 550);
+      // this.logo = new objects.Logo(this.assetManager,"lightning",this.canvas.clientWidth * 0.5 - 373, 50);
+      this.logo = new objects.Logo(this.assetManager,"lrbg",0, 0);
+      this.questionLabel = new objects.Label(this.chosenQuestion.question, "bold 20pt", "Verdana", "#000", this.canvas.clientWidth * 0.5, 520,true);
+      this.answerLabel = new objects.Label(this.chosenQuestion.answers[0], "18pt", "Verdana", "#000", 490, 550);
       this.questionLabel.lineWidth = 930;
       this.answerLabel.lineWidth = 930;
       this.answerLabel.textAlign = "center";
 
-      this.circleGreen = new objects.SubmitButton(this.assetManager, "circlegrn", this.canvas.clientWidth * 0.5 - 124, 600);
-      this.circleRed = new objects.SubmitButton(this.assetManager, "circlered", this.canvas.clientWidth * 0.5 + 20, 600);
+      this.circleGreen = new objects.SubmitButton(this.assetManager, "circlegrn1", this.canvas.clientWidth * 0.5 - 124, 600);
+      this.circleRed = new objects.SubmitButton(this.assetManager, "circlered2", this.canvas.clientWidth * 0.5 + 20, 600);
       this.timerLabel = new objects.Label(this.timer + "", "32pt", "Arial", "#FFF", this.canvas.clientWidth - 70, this.canvas.clientHeight - 60);
 
       this.circleGreen.on("click", () => {
@@ -163,7 +164,7 @@ module objects {
       ["Geno Beam", "Geno Strike", "Geno Whirl", "Geno Cannon", "Geno Blast"],"",[0,1,0,1,0]));
       this.questions.push(new objects.Question("ZELDA ORACLE SEEDS: Real or Fake",
       ["Ember Seeds", "Gale Seeds", "Splash Seeds", "Dash Seeds", "Korok Seeds"],"",[0,0,1,1,1]));
-      this.questions.push(new objects.Question("POKÉMON IN POKÉMON SNAP: Yes or No",
+      this.questions.push(new objects.Question("POKÉMON IN POKÉMON SNAP (N64): Yes or No",
       ["Pikachu", "Gastly", "Dragonair", "Porygon", "Kingler"],"",[0,1,1,0,1]));
       this.questions.push(new objects.Question("SUPER MARIO BROS. 3 WORLDS: Real or Fake",
       ["Grass Land", "Water Land", "Fire Land", "Pipe Land", "Ice Land"],"",[0,0,1,0,0]));
