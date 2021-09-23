@@ -1,3 +1,9 @@
 node_modules
-*.ts
-*.map
+scripts/core/*.ts
+scripts/core/*.map
+scripts/objects/*.ts
+scripts/objects/*.map
+scripts/config/*.ts
+scripts/config/*.map
+scripts/scenes/*.ts
+scripts/scenes.*.map
