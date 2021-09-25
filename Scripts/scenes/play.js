@@ -27,20 +27,20 @@ var scenes;
         PlayScene.prototype.Start = function () {
             // Choose a random question
             this.selection = Math.floor(Math.random() * 100) + 1;
-            // 1-30 = Easy Question
-            if (this.selection <= 30) {
+            // 1-25 = Easy Question
+            if (this.selection <= 25) {
                 this.type = 0;
                 this.easy = new objects.EasyQuestion(this.assetManager, this.type);
                 this.input = document.getElementById("input");
             }
-            // 31-40 = Brutal Question
-            else if (this.selection <= 40) {
+            // 26-35 = Brutal Question
+            else if (this.selection <= 35) {
                 this.type = 1;
                 this.bgType = "gamebrutalbg";
                 this.easy = new objects.EasyQuestion(this.assetManager, this.type);
                 this.input = document.getElementById("input");
             }
-            // 41-60 = Tricky Question
+            // 36-60 = Tricky Question
             else if (this.selection <= 60) {
                 this.type = 2;
                 this.easy = new objects.EasyQuestion(this.assetManager, this.type);

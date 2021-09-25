@@ -19,6 +19,7 @@ var scenes;
             var _this = _super.call(this, assetManager) || this;
             _this.canvas = document.getElementById("canvas");
             _this.controllerArray = [];
+            _this.load = true;
             _this.Start();
             return _this;
         }
