@@ -27,6 +27,7 @@ var scenes;
         PlayScene.prototype.Start = function () {
             // Choose a random question
             this.selection = Math.floor(Math.random() * 100) + 1;
+            console.log(this.selection);
             // 1-25 = Easy Question
             if (this.selection <= 25) {
                 this.type = 0;
