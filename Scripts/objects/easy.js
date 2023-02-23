@@ -2,10 +2,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -155,6 +157,7 @@ var objects;
             this.questions.push(new objects.Question("What is Kirby's home planet name in the Kirby Series?", ["POPSTAR", "PLANET POPSTAR", "PLANET POP STAR", "POP STAR"], "Kirby's home planet and the setting of several Kirby games is Planet Popstar."));
             this.questions.push(new objects.Question("How many Power Stars are there to collect in the original Super Mario 64?", ["120", "ONE HUNDRED AND TWENTY", "ONE HUNDRED TWENTY"], "There are a total of 120 Power Stars to collect in Super Mario 64, which not even Bowser himself knew."));
             this.questions.push(new objects.Question("What is the Manta Ray's name in Super Mario Galaxy?", ["RAY"], "The Manta Ray Mario rides on in two galaxies is called Ray."));
+            this.questions.push(new objects.Question("In Sly Cooper and the Thievius Raccoonus what is the name of the book Sly is trying to recover?", ["Thievius Raccoonus"], "The Thievius Raccoonus is the Cooper Family's Heirloom that has been stolen by the Fiendish Five."));
         };
         EasyQuestion.prototype.loadBrutalQuestions = function () {
             this.questions.push(new objects.Question("In the Friends of Mineral Town games in the Harvest Moon/Story of Seasons series, there is a character named Kappa who only accepts one gift. What is this one gift?", ["CUCUMBER", "CUCUMBERS"], "Kappa only likes cucumbers. Nothing more, nothing less."));
@@ -234,6 +237,7 @@ var objects;
             this.questions.push(new objects.Question("In Persona 5, before she adopted the codename Noir, Haru Okumura introduced herself with a different name. What was that name?", ["BEAUTY THIEF", "THE BEAUTY THIEF"], "Haru introduces herself to the Thieves as 'Beauty Thief'."));
             this.questions.push(new objects.Question("What species is Tigrex in the Monster Hunter series?", ["FLYING WYVERN"], "Tigrex is classified as part of the Flying Wyvern species."));
             this.questions.push(new objects.Question("Persona 3: Dancing in Moonlight and DLC had every playable character from Persona 3, except for one. Who was missing?", ["KOROMARU"], "The dog, Koromaru, was the only playable character from Persona 3 to not be playable in Persona 3: Dancing in Moonlight."));
+            this.questions.push(new objects.Question("What was the last Crash Bandicoot game that Naughty Dog worked on?", ["CRASH TEAM RACING", "CTR"], "Crash Team Racing was the last Crash Bandicoot game that the Company developed before completely handing it over to another Studio"));
         };
         return EasyQuestion;
     }(createjs.Container));

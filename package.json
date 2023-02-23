@@ -9,6 +9,7 @@
   "author": "Brandon R",
   "license": "ISC",
   "dependencies": {
-    "@types/createjs": "0.0.29"
+    "@types/createjs": "0.0.29",
+    "@types/node": "^18.14.1"
   }
 }

@@ -2,10 +2,12 @@ var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
             ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
-            function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+            function (d, b) { for (var p in b) if (Object.prototype.hasOwnProperty.call(b, p)) d[p] = b[p]; };
         return extendStatics(d, b);
     };
     return function (d, b) {
+        if (typeof b !== "function" && b !== null)
+            throw new TypeError("Class extends value " + String(b) + " is not a constructor or null");
         extendStatics(d, b);
         function __() { this.constructor = d; }
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
@@ -120,6 +122,7 @@ var objects;
             this.questions.push(new objects.Question("Who is Roy's father in Fire Emblem: The Binding Blade?", ["Eliwood", "Hector", "Raven", "Mark"], "Roy's father is Eliwood, named by Mark from Fire Emblem: The Blazing Blade.", [], 0));
             this.questions.push(new objects.Question("Out of all the races in Xenoblade Chronicles, which one is the closest to humans?", ["Nopon", "Homs", "High Entia", "Machina"], "The closest race to humans in Xenoblade Chronicles are Homs. They're similar in almost every way except for the ether in their bodies.", [], 1));
             this.questions.push(new objects.Question("What was Link's title in The Legend of Zelda: Ocarina of Time?", ["Hero of Time", "Hero of Winds", "Hero of the Skies", "Hero of Light"], "As the hero who travelled across time, Link from Ocarina of Time was known as the Hero of Time.", [], 0));
+            this.questions.push(new objects.Question("In Sly 3: Honor Among Thieves, how many members does the Cooper Gang have?", ["1", "5", "7", "9"], "As the hero who travelled across time, Link from Ocarina of Time was known as the Hero of Time.", [], 2));
         };
         return MultipleChoice;
     }(createjs.Container));
