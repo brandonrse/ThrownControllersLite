@@ -157,7 +157,7 @@ var objects;
             this.questions.push(new objects.Question("What is Kirby's home planet name in the Kirby Series?", ["POPSTAR", "PLANET POPSTAR", "PLANET POP STAR", "POP STAR"], "Kirby's home planet and the setting of several Kirby games is Planet Popstar."));
             this.questions.push(new objects.Question("How many Power Stars are there to collect in the original Super Mario 64?", ["120", "ONE HUNDRED AND TWENTY", "ONE HUNDRED TWENTY"], "There are a total of 120 Power Stars to collect in Super Mario 64, which not even Bowser himself knew."));
             this.questions.push(new objects.Question("What is the Manta Ray's name in Super Mario Galaxy?", ["RAY"], "The Manta Ray Mario rides on in two galaxies is called Ray."));
-            this.questions.push(new objects.Question("In Sly Cooper and the Thievius Raccoonus what is the name of the book Sly is trying to recover?", ["Thievius Raccoonus"], "The Thievius Raccoonus is the Cooper Family's Heirloom that has been stolen by the Fiendish Five."));
+            this.questions.push(new objects.Question("In Sly Cooper and the Thievius Raccoonus what is the name of the book Sly is trying to recover?", ["THIEVIUS RACCOONUS"], "The Thievius Raccoonus is the Cooper Family's Heirloom that has been stolen by the Fiendish Five."));
         };
         EasyQuestion.prototype.loadBrutalQuestions = function () {
             this.questions.push(new objects.Question("In the Friends of Mineral Town games in the Harvest Moon/Story of Seasons series, there is a character named Kappa who only accepts one gift. What is this one gift?", ["CUCUMBER", "CUCUMBERS"], "Kappa only likes cucumbers. Nothing more, nothing less."));
