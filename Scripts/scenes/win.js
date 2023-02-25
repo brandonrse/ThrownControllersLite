@@ -31,7 +31,7 @@ var scenes;
         };
         WinScene.prototype.Main = function () {
             this.bgm = createjs.Sound.play("winbgm");
-            this.bgm.volume = 0.5;
+            this.bgm.volume = 0.2;
             this.addChild(this.bg);
             createjs.Tween.get(this.win).to({ alpha: 1 }, 3000);
             this.addChild(this.win);

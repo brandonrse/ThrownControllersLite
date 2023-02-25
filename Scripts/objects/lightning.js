@@ -152,6 +152,8 @@ var objects;
             this.questions.push(new objects.Question("OKAMI CELESTIAL BRUSH GODS", ["Gekigami", "Haregami", "Noragami", "Moegami", "Amaterasu"], "", [0, 1, 1, 0, 0]));
             this.questions.push(new objects.Question("SUPER SMASH BROS. BRAWL FIGHTERS", ["Dr. Mario", "Wolf", "Mewtwo", "Young Link", "Lucas"], "", [1, 0, 1, 1, 0]));
             this.questions.push(new objects.Question("KLAWW GANG MEMBERS: Yes or No", ["Muggshot", "Dimitri", "Jean Bison", "Arpeggio", "Don Octavio"], "", [1, 0, 0, 0, 1]));
+            this.questions.push(new objects.Question("XENOBLADE 3 HERO CLASSES: Real or Fake", ["Lapidarist", "Heropon", "Winged Viper", "Soul Hacker", "Blast Fencer"], "", [0, 1, 1, 0, 1]));
+            this.questions.push(new objects.Question("CLUB PENGUIN EPF PUFFLES: Real or Fake", ["Flit", "Loop", "Frost", "Bubbles", "Blast"], "", [0, 0, 1, 1, 0]));
         };
         return Lightning;
     }(createjs.Container));
