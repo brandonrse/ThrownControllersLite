@@ -123,6 +123,7 @@ var objects;
             this.questions.push(new objects.Question("Out of all the races in Xenoblade Chronicles, which one is the closest to humans?", ["Nopon", "Homs", "High Entia", "Machina"], "The closest race to humans in Xenoblade Chronicles are Homs. They're similar in almost every way except for the ether in their bodies.", [], 1));
             this.questions.push(new objects.Question("What was Link's title in The Legend of Zelda: Ocarina of Time?", ["Hero of Time", "Hero of Winds", "Hero of the Skies", "Hero of Light"], "As the hero who travelled across time, Link from Ocarina of Time was known as the Hero of Time.", [], 0));
             this.questions.push(new objects.Question("In Sly 3: Honor Among Thieves, how many members does the Cooper Gang have?", ["1", "5", "7", "9"], "There are 7 members in the Cooper Gang.", [], 2));
+            this.questions.push(new objects.Question("How many lives did it take Cranky Kong to beat Donkey Kong Country?", ["0", "1", "5", "10"], "Cranky Kong claims to have beaten Donkey Kong Country with only one life and in less than an hour.", [], 0));
         };
         return MultipleChoice;
     }(createjs.Container));
