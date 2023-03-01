@@ -124,6 +124,7 @@ var objects;
             this.questions.push(new objects.Question("What was Link's title in The Legend of Zelda: Ocarina of Time?", ["Hero of Time", "Hero of Winds", "Hero of the Skies", "Hero of Light"], "As the hero who travelled across time, Link from Ocarina of Time was known as the Hero of Time.", [], 0));
             this.questions.push(new objects.Question("In Sly 3: Honor Among Thieves, how many members does the Cooper Gang have?", ["1", "5", "7", "9"], "There are 7 members in the Cooper Gang.", [], 2));
             this.questions.push(new objects.Question("How many lives did it take Cranky Kong to beat Donkey Kong Country?", ["0", "1", "5", "10"], "Cranky Kong claims to have beaten Donkey Kong Country with only one life and in less than an hour.", [], 0));
+            this.questions.push(new objects.Question("How many levels were in World 9 of Donkey Kong Country Returns for the 3DS?", ["1", "4", "7", "9"], "The Wii version of Donkey Kong Country Returns only had 1 level in World 9. The 3DS version added an extra 8 for a total of 9 levels.", [], 3));
         };
         return MultipleChoice;
     }(createjs.Container));
